@@ -7,8 +7,8 @@
     <h1>
         Ange ett Datum
     </h1>
-    <form>
-        <label for ="year"> År:</label>
+    <form action="api" method="post">
+        <label for ="year"> Year:</label>
         <input type="number" id="year" name="year" required>
         <br><br>
         <label for="month">Month:</label>
@@ -17,7 +17,7 @@
         <label for="day">Dag:</label>
         <input type="number" id="day" name="day" required>
         <br><br>
-        <input type="submit"value skicka>
+        <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </body>
 
