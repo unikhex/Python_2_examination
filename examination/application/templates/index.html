@@ -1,13 +1,12 @@
 {%extends "layout.html"%}
 {%block title%}title{%endblock%}
 {%block content%}
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <h1 class="text-center"> Index</h1>
-            <a class="btn btn-primary mt-5 mb-5"href ="form"role="button">Enterdata</a>"
-            {{data|safe}}
-        </div>
-    </div>
-</div>
+<form method="POST">
+    Year:<input type="text" name="year"><br>
+    Month:<input type="text" name="month"><br>
+    Day:<input type="text" name="day"><br>
+    price class:<input type="text" name="price_class"><br>
+    <input type="submit" value="Get Prices">
+</form>
+
 {%endblock%}
