@@ -1,12 +1,26 @@
-{%extends "layout.html"%}
-{%block title%}title{%endblock%}
-{%block content%}
-<form method="POST">
-    Year:<input type="text" name="year"><br>
-    Month:<input type="text" name="month"><br>
-    Day:<input type="text" name="day"><br>
-    price class:<input type="text" name="price_class"><br>
-    <input type="submit" value="Get Prices">
-</form>
-
-{%endblock%}
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+    <div class="row p-5">
+        <div class="col-1"></div>
+        <div class="col-10 border p-3">
+            <h3>Electricity prices</h3><br>
+            <p>Choose a date and priceclass.</p>
+            <p class="fs-6 fw-light fst-italic">Tommorow's prices are updated at 1 o'cklock</p>
+            <form action="api" method="post">
+                <label for="date">Choose a date:</label><br/>
+                <input type="date" name="date" id="date" min="2022-11-01" max={{max_date}} placeholder="{{placeholder}}"/><br/>
+                <label for="prisklass">Choose a priceclass:</label><br/>
+                <select class="form-select" aria-label="Default select example" name="prisklass" id="prisklass">
+                    <option value="SE1">SE1, Luleå / Norra Sverige</option>
+                    <option value="SE2">SE2, Sundsvall / Norra Mellansverige</option>
+                    <option value="SE3">SE3, Stockholm / Södra Mellansverige</option>
+                    <option value="SE4">SE4, Malmö / Södra Sverige</option>
+                </select><br/>
+                <button type="submit" class="btn btn-primary mt-5">Submit</button> 
+            </form>
+        </div>
+        <div class="col-1"></div>
+    </div>
+</div>
+{% endblock %}

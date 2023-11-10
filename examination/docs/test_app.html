@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>test_app.py</title>
+  <link rel="stylesheet" href="pycco.css">
+</head>
+<body>
+<div id='container'>
+  <div id="background"></div>
+  <div class='section'>
+    <div class='docs'><h1>test_app.py</h1></div>
+  </div>
+  <div class='clearall'>
+  <div class='section' id='section-0'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-0'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">application</span> <span class="kn">import</span> <span class="n">app</span>
+<span class="kn">import</span> <span class="nn">urllib</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-1'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-1'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">test_json_data</span><span class="p">():</span>
+    <span class="n">api_url</span> <span class="o">=</span> <span class="s2">&quot;https://www.elprisetjustnu.se/api/v1/prices/2023/05-05_SE1.json&quot;</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">json_data_to_pandas_df</span><span class="p">(</span><span class="n">api_url</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-2'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-2'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">test_to_html</span><span class="p">():</span>
+    <span class="n">api_url</span> <span class="o">=</span> <span class="s2">&quot;https://www.elprisetjustnu.se/api/v1/prices/2023/05-05_SE1.json&quot;</span>
+    <span class="n">html_table</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">pandas_df_to_html_table</span><span class="p">(</span><span class="n">api_url</span><span class="p">)</span>
+    
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">html_table</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-3'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-3'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">test_date</span><span class="p">():</span>
+    <span class="n">max_date</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">get_max_date</span><span class="p">()</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">max_date</span><span class="p">)</span> <span class="o">==</span> <span class="mi">10</span>
+
+</pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+</div>
+</body>

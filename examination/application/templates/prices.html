@@ -1,11 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Electricity Prices</title>
-</head>
-<body>
-    <h1>Electricity Prices</h1>
-    <!-- Display the electricity prices here -->
-    <pre>{{ electricity_prices }}</pre>
-</body>
-</html>
+{% extends "layout.html" %}
+{% block title %}Electricity Prices{% endblock %}
+{% block head %}
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                {{ table|safe }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
